@@ -1,7 +1,9 @@
 import { Github, Mail, Phone, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { useLanguage } from "@/context/useLanguage";
 
 const ProfileHeader = () => {
+  const { t } = useLanguage();
   return (
     <header id="top" className="relative bg-gradient-to-br from-primary via-secondary to-primary text-primary-foreground overflow-hidden min-h-[600px] flex items-center">
       {/* Content */}
@@ -16,7 +18,7 @@ const ProfileHeader = () => {
             Ai Chen Hsieh
           </h1>
           <p className="text-xl sm:text-2xl font-medium text-primary-foreground/80 mb-8">
-            Frontend Developer
+            {t.profile.title}
           </p>
 
           {/* Contact Links */}
@@ -29,7 +31,7 @@ const ProfileHeader = () => {
             >
               <a href="mailto:a0903109727@gmail.com" className="gap-2">
                 <Mail className="w-4 h-4" />
-                Email
+                {t.profile.email}
               </a>
             </Button>
             <Button
@@ -40,7 +42,7 @@ const ProfileHeader = () => {
             >
               <a href="tel:+886903109727" className="gap-2">
                 <Phone className="w-4 h-4" />
-                Call
+                {t.profile.call}
               </a>
             </Button>
             <Button
@@ -56,7 +58,7 @@ const ProfileHeader = () => {
                 className="gap-2"
               >
                 <Github className="w-4 h-4" />
-                GitHub
+                {t.profile.github}
               </a>
             </Button>
             <Button
@@ -72,7 +74,7 @@ const ProfileHeader = () => {
                 className="gap-2"
               >
                 <BookOpen className="w-4 h-4" />
-                Blog
+                {t.profile.blog}
               </a>
             </Button>
           </div>

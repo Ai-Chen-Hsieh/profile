@@ -1,45 +1,17 @@
-interface SkillCategory {
-  title: string;
-  skills: string[];
-}
-
-const skillCategories: SkillCategory[] = [
-  {
-    title: "Languages",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript"],
-  },
-  {
-    title: "CSS Framework/Tools",
-    skills: ["SCSS", "Bootstrap", "Tailwind CSS", "Angular Material"],
-  },
-  {
-    title: "Frameworks",
-    skills: ["Angular", "React", "Node.js"],
-  },
-  {
-    title: "Tools & Others",
-    skills: [
-      "Git",
-      "GitHub",
-      "GitLab",
-      "Vite",
-      "Vercel",
-      "Tanstack Query",
-      "Docker",
-    ],
-  },
-];
+import { useLanguage } from "@/context/useLanguage";
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
-          Skills & Technologies
+          {t.skills.heading}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category) => (
+          {t.skills.categories.map((category) => (
             <div
               key={category.title}
               className="bg-card border border-border rounded-xl p-6"

@@ -1,51 +1,20 @@
 import { Briefcase, Calendar } from "lucide-react";
-
-interface Experience {
-  title: string;
-  company: string;
-  period: string;
-  achievements: string[];
-}
-
-const experiences: Experience[] = [
-  {
-    title: "Frontend Developer",
-    company: "Galaxy Software Services",
-    period: "November 2024 – Present",
-    achievements: [
-      "Developed SaaS applications including E-Form systems, case management systems, and integrated platform features",
-      "Contributed to internal frontend component library, creating reusable and scalable components",
-      "Designed iframe-based architecture to integrate core products with third-party services",
-      "Implemented GitLab CI/CD pipelines with Docker-based development environments",
-      "Collaborated on requirement analysis, frontend architecture design, and system optimization",
-    ],
-  },
-  {
-    title: "Frontend Developer",
-    company: "Shinda Technology",
-    period: "July 2023 - August 2024",
-    achievements: [
-      "Developed SaaS applications (E-commerce, EIP System) using Angular, RxJS, Tailwind, and Bootstrap",
-      "Resolved cross-platform issues, ensuring adaptability across devices and browsers",
-      "Optimized front-end performance through code refactoring and lazy loading",
-      "Collaborated with international teams on complex projects",
-      "Technical speaker for RxJS and Tailwind CSS sessions with 30+ attendees",
-    ],
-  },
-];
+import { useLanguage } from "@/context/useLanguage";
 
 const ExperienceSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="experience" className="py-16 px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
-          Work Experience
+          {t.experience.heading}
         </h2>
 
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
+          {t.experience.items.map((exp, index) => (
             <div
-              key={`${exp}-${index}`}
+              key={`${exp.company}-${index}`}
               className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">

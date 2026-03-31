@@ -1,15 +1,16 @@
 import { Github, Mail, BookOpen } from "lucide-react";
+import { useLanguage } from "@/context/useLanguage";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-primary text-primary-foreground py-12 px-6">
       <div className="max-w-5xl mx-auto text-center">
-        <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
+        <h3 className="text-2xl font-bold mb-4">{t.footer.connect}</h3>
         <p className="text-primary-foreground/70 mb-6 max-w-md mx-auto">
-          I'm always open to discussing new opportunities and interesting
-          projects.
+          {t.footer.description}
         </p>
 
         <div className="flex justify-center gap-4 mb-8">
@@ -41,7 +42,7 @@ const Footer = () => {
         </div>
 
         <p className="text-sm text-primary-foreground/50">
-          © {currentYear} Ai Chen Hsieh. All rights reserved.
+          © {currentYear} Ai Chen Hsieh. {t.footer.rights}
         </p>
       </div>
     </footer>

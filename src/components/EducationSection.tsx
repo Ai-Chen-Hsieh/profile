@@ -1,11 +1,14 @@
 import { GraduationCap, Award } from "lucide-react";
+import { useLanguage } from "@/context/useLanguage";
 
 const EducationSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="education" className="py-16 px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
-          Education & Certification
+          {t.education.heading}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -17,13 +20,13 @@ const EducationSection = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-1">
-                  Bachelor of Food Science
+                  {t.education.degree}
                 </h3>
                 <p className="text-accent font-medium mb-2">
-                  National Ilan University
+                  {t.education.university}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  June 2014 - September 2018
+                  {t.education.universityPeriod}
                 </p>
               </div>
             </div>
@@ -37,11 +40,11 @@ const EducationSection = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-1">
-                  Full Stack Web Development
+                  {t.education.cert}
                 </h3>
-                <p className="text-accent font-medium mb-2">Alpha Camp</p>
+                <p className="text-accent font-medium mb-2">{t.education.certSchool}</p>
                 <p className="text-sm text-muted-foreground">
-                  October 2022 - April 2023
+                  {t.education.certPeriod}
                 </p>
               </div>
             </div>
