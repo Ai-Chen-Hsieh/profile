@@ -1,30 +1,35 @@
 import { useLanguage } from "@/context/useLanguage";
 
+const FONT = { fontFamily: '"Segoe UI", system-ui, -apple-system, sans-serif' };
+
 const SkillsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="skills" className="py-16 px-6">
+    <section id="skills" className="py-20 px-6 section-hidden" style={FONT}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
-          {t.skills.heading}
-        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="text-center mb-12">
+          <p className="text-xs tracking-[0.2em] uppercase text-[#00D4FF]/70 mb-3">
+            Skills
+          </p>
+          <h2 className="text-3xl font-bold text-white">
+            {t.skills.heading}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.skills.categories.map((category) => (
             <div
               key={category.title}
-              className="bg-card border border-border rounded-xl p-6"
+              className="fluent-acrylic-surface fluent-depth-1 rounded-2xl p-6"
             >
-              <h3 className="text-lg font-semibold text-foreground mb-4 pb-2 border-b border-border">
+              <h3 className="text-sm font-semibold text-white/80 mb-4 pb-3 border-b border-white/8 tracking-wide">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-default"
-                  >
+                  <span key={skill} className="skill-tag-dark">
                     {skill}
                   </span>
                 ))}
